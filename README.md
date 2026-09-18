@@ -1,5 +1,5 @@
 # Scottie's Fantabulous Deadlock Quiz (that nobody will understand)
-> A short one-line tagline for your quiz or questionnaire
+> Test your knowledge of Valve's latest project...
 
 ## Overview
 > This program is a quiz based on the game Deadlock created by Valve. It's been a fixation for me for a while and it's one of the few things I have specialized knowledge in so I decided to base this quiz on it. The users input their answers to the question and try to get to the end without losing too many lives. At the end, their current lives are listed.
