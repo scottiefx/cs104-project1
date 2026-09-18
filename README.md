@@ -1,63 +1,41 @@
-# [Your Project Name Here]
+# Scottie's Fantabulous Deadlock Quiz (that nobody will understand)
 > A short one-line tagline for your quiz or questionnaire
 
 ## Overview
-> **DELETE AND REPLACE ME:** Describe your program's focus, the type of
-> program it is (quiz, personality test, or recommendation tool), and the
-> final output a user will receive. Make it clear how user input and
-> conditional logic work together to produce that result.
->
-> Example: "This program quizzes users on Impressionist art. Based on
-> their answers, users earn points, and their final score determines
-> their level of knowledge on the topic."
+> This program is a quiz based on the game Deadlock created by Valve. It's been a fixation for me for a while and it's one of the few things I have specialized knowledge in so I decided to base this quiz on it. The users input their answers to the question and try to get to the end without losing too many lives. At the end, their current lives are listed.
 
 ## Sample Questions and Responses
-> **DELETE AND REPLACE ME:** List at least five questions you'll ask the
-> user, along with the possible responses for each. Keep every question
-> closed-ended (numbered options or yes/no) so each response can be
-> handled directly by an `if`, `elif`, or `else` statement.
->
-> Example:
-> Which of the following painters is an Impressionist?
-> 1. Monet
-> 2. Warhol
-> 3. Rembrandt
+> Does the item Toxic Bullets do damage based on current health or max health?
+> 1. Current Health (incorrect)
+> 2. Max Health (correct)
+> How many lanes were on the map before the map rework?
+> 1. 3 (incorrect)
+> 2. 4 (correct)
+> 3. 5 (incorrect)
+> When was the last major update (as of September 18th 2026)?
+> January (correct)
+> March (incorrect)
+> June (incorrect)
+> How many souls does a tier 4 item cost?
+> 3,200 (incorrect)
+> 4,800 (incorrect)
+> 6,400 (correct)
+> Who was the most recently added Hero?
+> Graves (incorrect)
+> Apollo (correct)
+> Celeste (incorrect)
 
 ## Variables
-> **DELETE AND REPLACE ME:** List the variables your program uses. For
-> each one, note what it stores and why you structured it that way,
-> especially for variables tracking results, explain whether a single
-> variable or multiple variables makes sense for your program's logic.
->
-> Example:
-> - `score` (int): tracks total quiz points. A single variable works here
->   since results are cumulative and only one final score matters.
-> - `decade_1920s_points`, `decade_1960s_points`, `decade_1980s_points`
->   (int): separate variables needed since multiple decades can tie for
->   highest score, one combined variable couldn't represent that.
-> - `user_choice` (str or int): stores the user's response to a question,
->   compared against expected options to decide which branch of the
->   conditional runs.
+> lives (int): determines how many chances the user has to get a question wrong before failure
+> answer (int): the answer of the user, forced into an integer position for simplicity
+> Qstate (int): The current question the user is on
 
 ## Conditional Logic Outline
-> **DELETE AND REPLACE ME:** Outline every conditional statement in your
-> program, in the order they appear. For each one, describe it in plain
-> language (no code needed): which question/condition it relates to,
-> each branch (`if`/`elif`/`else`), the exact condition that triggers
-> each branch, the action(s) that happen in each branch, and note any
-> nested conditionals and why they're nested.
->
-> Example:
-> - **Conditional statement 1** — related to "Which of the following
->   painters is an Impressionist? 1-Monet 2-Warhol 3-Rembrandt"
->   - `if` response is 1 (Monet): display congratulatory message,
->     increment `score` by 1
->   - `else`: display incorrect message and explain the correct answer
->
-> - **Conditional statement 2** — reveals final results based on `score`
->   - `if` score is 3: display high-knowledge message
->   - `elif` score is 1 or 2: display some-knowledge message
->   - `else`: display message encouraging the user to learn more
+> FOR EVERY QUESTION:
+> Asks the user the question, displays the possible answers, asks for input.
+> If user's input is incorrect, display "Incorrect!" and then deduct from their lives.
+> If user's input is correct, display "Correct!" and move to next question, increase Qstate by 1.
+> If user runs out of lives, display a failure message and end quiz
 
 ## How to Run
 1. Clone this repo
